@@ -220,7 +220,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -441,6 +441,10 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
+  // change the tasks in the list to your production tasks
+  grunt.registerTask('heroku',
+    ['compass:dist', 'autoprefixer', 'imagemin']);
 
   grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
